@@ -1,11 +1,11 @@
 #include "DigiKeyboard.h"
 
 int pin[] = {39, 30, 31, 32, 33, 34, 35, 36, 37, 38};
-int a = 0;
-int b = 0;
-int c = 0;
-int d = 0;
-int e = 0;
+int digit1 = 0;
+int digit2 = 0;
+int digit3 = 0;
+int digit4 = 0;
+int digit5 = 0;
 int count = 0;
 bool key_stroke_e = false;
 
@@ -30,49 +30,49 @@ void loop()
     /*=========Key out the pin combinations==========*/
     if (key_stroke_e == false)
     {
-        DigiKeyboard.sendKeyStroke(pin[a]);
-        DigiKeyboard.sendKeyStroke(pin[b]);
-        DigiKeyboard.sendKeyStroke(pin[c]);
-        DigiKeyboard.sendKeyStroke(pin[d]);
+        DigiKeyboard.sendKeyStroke(pin[digit1]);
+        DigiKeyboard.sendKeyStroke(pin[digit2]);
+        DigiKeyboard.sendKeyStroke(pin[digit3]);
+        DigiKeyboard.sendKeyStroke(pin[digit4]);
     }
 
     if (key_stroke_e == true)
     {
-        DigiKeyboard.sendKeyStroke(pin[a]);
-        DigiKeyboard.sendKeyStroke(pin[b]);
-        DigiKeyboard.sendKeyStroke(pin[c]);
-        DigiKeyboard.sendKeyStroke(pin[d]);
-        DigiKeyboard.sendKeyStroke(pin[e]);
+        DigiKeyboard.sendKeyStroke(pin[digit1]);
+        DigiKeyboard.sendKeyStroke(pin[digit2]);
+        DigiKeyboard.sendKeyStroke(pin[digit3]);
+        DigiKeyboard.sendKeyStroke(pin[digit4]);
+        DigiKeyboard.sendKeyStroke(pin[digit5]);
     }
     DigiKeyboard.sendKeyStroke(40);
     delay(1000);
-    d++;
+    digit4++;
     count++;
     /*========To count 0000 to 9999 number combinations=======*/
-    if (d == 10)
+    if (digit4 == 10)
     {
-        d = 0;
-        c++;
+        digit4 = 0;
+        digit3++;
 
-        if (c == 10)
+        if (digit3 == 10)
         {
-            c = 0;
-            b++;
+            digit3 = 0;
+            digit2++;
 
-            if (b == 10)
+            if (digit2 == 10)
             {
-                b = 0;
-                a++;
+                digit2 = 0;
+                digit1++;
 
-                if (a == 10)
+                if (digit1 == 10)
                 {
 
                     key_stroke_e = true;
-                    e++;
+                    digit5++;
 
-                    if (e == 10)
+                    if (digit5 == 10)
                     {
-                        e = 0;
+                        digit5 = 0;
                     }
                 }
             }
