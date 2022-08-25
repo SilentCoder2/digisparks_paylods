@@ -12,8 +12,8 @@ bool key_stroke_e = false;
 void setup()
 {
     DigiKeyboard.update();
-    DigiKeyboard.sendKeyStroke(0); // this is generally not necessary but with some older systems it seems to prevent missing the first character after a delay
-    delay(3000);
+    DigiKeyboard.sendKeyStroke(0); // this is generally not necessary but with some older systems 
+    delay(3000);                   // it seems to prevent missing the first character after a delay
 }
 
 void loop()
@@ -27,7 +27,7 @@ void loop()
         count = 0;
         digitalWrite(1, LOW);
     }
-
+    /*=========Key out the pin combinations==========*/
     if (key_stroke_e == false)
     {
         DigiKeyboard.sendKeyStroke(pin[a]);
@@ -48,28 +48,28 @@ void loop()
     delay(1000);
     d++;
     count++;
-    
+    /*========To count 0000 to 9999 number combinations=======*/
     if (d == 10)
     {
         d = 0;
         c++;
-        
+
         if (c == 10)
         {
             c = 0;
             b++;
-            
+
             if (b == 10)
             {
                 b = 0;
-                a++; 
+                a++;
 
                 if (a == 10)
                 {
-                    
+
                     key_stroke_e = true;
                     e++;
-                    
+
                     if (e == 10)
                     {
                         e = 0;
