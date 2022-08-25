@@ -1,3 +1,8 @@
+/*  This program is a beginner level program,
+I also mention the use of required line to
+understand, This will help you to understand.
+@SilentCoder2---github  */
+
 #include <DigiKeyboard.h>
 
 #define link "https://google.com/" // You can change the link
@@ -11,7 +16,7 @@ void loop()
 {
 
     DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); // send key window + r to start the rum command
-    delay(250);                                      /// wait for 250 mili second
+    delay(250);                                      // wait for 250 mili second
     DigiKeyboard.print(link);
     DigiKeyboard.sendKeyStroke(KEY_ENTER); // send enter key
                                            // delay(200);
