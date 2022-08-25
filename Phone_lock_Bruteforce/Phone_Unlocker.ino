@@ -12,7 +12,7 @@ bool key_stroke_e = false;
 void setup()
 {
     DigiKeyboard.update();
-    DigiKeyboard.sendKeyStroke(0); // this is generally not necessary but with some older systems 
+    DigiKeyboard.sendKeyStroke(0); // this is generally not necessary but with some older systems
     delay(3000);                   // it seems to prevent missing the first character after a delay
 }
 
